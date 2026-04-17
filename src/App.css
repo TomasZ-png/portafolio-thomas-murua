@@ -1,0 +1,226 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --bg:       #1E1007;
+  --bg2:      #2A1608;
+  --bg3:      #351C0A;
+  --wood:     #5C3318;
+  --wood2:    #7A4520;
+  --gold:     #D4A84B;
+  --gold2:    #F0C060;
+  --rust:     #B84C1A;
+  --parch:    #D4B896;
+  --parch2:   #E8D0AA;
+  --ink:      #1A0D00;
+  --text:     #F0E0C0;
+  --muted:    #A08060;
+  --wire:     rgba(212,168,75,0.2);
+}
+
+html{
+  background-color: var(--bg);
+}
+
+
+/* ================ TEXTO ================ */
+
+
+.remarcarOro{
+  color: var(--gold);
+}
+
+.remarcarOro2{
+  color: var(--gold2);
+}
+
+.remarcarClaro{
+  color: var(--wood2)
+}
+
+.titulo{
+  font-family: 'Rye', serif;
+}
+
+.subtitulo{
+  font-family: 'Special Elite', cursive;
+}
+
+.separado{
+  letter-spacing: 4px;
+  font-weight: 500;
+}
+
+
+/* ================ HEADER ================ */
+
+
+.header{
+  background-color: var(--bg2);
+  padding: 15px;
+  display: flex;
+  border-bottom: solid 2px var(--wood2);
+  font-family: 'Rye', serif;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-user-brand {
+  color: var(--gold);
+}
+
+.header-user-brand p {
+  font-size: 11px;
+  letter-spacing: 3.65px;
+  color: var(--muted);
+}
+
+.header-buttons ul{
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.header-buttons ul li{
+  position: relative;
+  color: var(--muted);
+  font-size: 18px;
+  transition: 0.2s ease-in-out all;
+  cursor: pointer;
+  font-family: 'Special Elite', cursive;
+
+}
+
+.header-buttons ul li::after {
+  content: "";
+  position: absolute;
+  left: 50%;              
+  bottom: 0;
+  width: 0;               
+  height: 1px;
+  background-color: var(--gold);
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.header-buttons ul li:hover {
+  color: var(--gold);
+}
+
+.header-buttons ul li:hover::after {
+  width: 100%;           
+  left: 0;               
+} 
+
+
+/* ================ USER SECTION ================ */
+
+
+.user-presentation{
+  font-family: 'Rye', serif;
+  margin-top: 120px;
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.user-presentation-section{
+  display: flex;
+  gap: 40px;
+  width: 100%;
+  max-width: 1100px;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-card{
+  background-color: var(--parch);
+  width: 100%;
+  max-width: 350px;
+  text-align: center;
+  padding: 10px;
+  border: solid 5px var(--wood2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.user-card img{
+  width: 100%;
+  max-width: 220px;
+}
+
+hr{
+  color: var(--wood2);
+  background-color: var(--bg2);
+  width: 100%;
+  border: none;
+  height: 2px;
+}
+
+.user-card h1{
+  font-size: 45px;
+  font-weight: 500;
+}
+
+.name-card{
+  font-size: 20px;
+}
+
+.user-info{
+  color: var(--text);
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.user-info h1{
+  color: var(--text);
+  font-size: 50px;
+  width: 100%;
+  max-width: 330px;
+}
+
+.user-info h3{
+  color: var(--muted);
+  font-family: 'Special Elite', cursive;
+  font-size: 16px;
+  font-weight: 100;
+}
+
+.user-info p{
+  font-size: 16px;
+  font-family: 'Special Elite', cursive;
+  width: 100%;
+  max-width: 520px;
+  line-height: 25px;
+  color: var(--parch);
+}
+
+
+/* ================ DIVIDER ================ */
+
+
+.divider{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 150px 0;
+  gap: 10px;
+}
+
+.divider-line { 
+  flex: 1; 
+  height: 1px; 
+  background: linear-gradient(90deg, transparent, var(--wood), transparent); 
+}
+
+.divider-orn{
+  color: var(--gold);
+  font-size: 20px;
+}
