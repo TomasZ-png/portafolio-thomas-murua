@@ -23,6 +23,7 @@
 
 html{
   background-color: var(--bg);
+  scroll-behavior: smooth;
 }
 
 
@@ -66,6 +67,9 @@ html{
   font-family: 'Rye', serif;
   align-items: center;
   justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .header-user-brand {
@@ -84,17 +88,17 @@ html{
   gap: 25px;
 }
 
-.header-buttons ul li{
+.header-buttons ul li a{
   position: relative;
   color: var(--muted);
   font-size: 18px;
   transition: 0.2s ease-in-out all;
   cursor: pointer;
   font-family: 'Special Elite', cursive;
-
+  text-decoration: none;
 }
 
-.header-buttons ul li::after {
+.header-buttons ul li a::after {
   content: "";
   position: absolute;
   left: 50%;              
@@ -105,11 +109,11 @@ html{
   transition: width 0.3s ease, left 0.3s ease;
 }
 
-.header-buttons ul li:hover {
+.header-buttons ul li a:hover {
   color: var(--gold);
 }
 
-.header-buttons ul li:hover::after {
+.header-buttons ul li a:hover::after {
   width: 100%;           
   left: 0;               
 } 
@@ -223,4 +227,93 @@ hr{
 .divider-orn{
   color: var(--gold);
   font-size: 20px;
+}
+
+
+/* ================ TECNOLOGIAS ================ */
+
+
+.title-section{
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.title-section p{
+  color: var(--gold);
+  font-family: 'Special Elite', cursive;
+  letter-spacing: 5px;
+}
+
+.title-section h1{
+  color: var(--text);
+  font-family: 'Rye', serif;
+  letter-spacing: 5px;
+  font-size: 40px;
+}
+
+.technologies-card-container{
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  padding: 10px;
+  gap: 70px;
+}
+
+.technologie-card-container{
+  border: solid 1px var(--wood);
+  padding: 20px;
+  background-color: var(--bg3);
+  width: 100%;
+  max-width: 270px;
+  transition: 0.2s ease-in-out all;
+  flex: 1;
+}
+
+.technologie-card-container:hover{
+  background-color: var(--bg2);
+  border: solid 1px var(--gold);
+}
+
+.title-with-icon{
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-direction: column;
+}
+
+.title-with-icon h3{
+  color: var(--gold);
+  font-family: 'Rye', serif;
+  font-size: 22px;
+  font-weight: 100;
+  margin-bottom: 10px;
+}
+
+
+.technologies-card{
+  display: flex;
+  flex-wrap: wrap;
+  grid-auto-columns: auto;
+  /* grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); */
+  gap: 10px;
+}
+
+.technologie{
+  border: solid 1px var(--wood2);
+  font-family: 'Special Elite', cursive;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  justify-self: center;
+  padding: 5px;
+  background-color: var(--bg3);
+  color: var(--muted);
+  font-weight: 100;
+  transition: 0.2s ease-in-out all;
+
+}
+
+.technologie:hover{
+  background-color: var(--wood);
+  color: var(--gold);
 }

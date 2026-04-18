@@ -1,6 +1,7 @@
 
 import './App.css'
 import fotoPerfil from './assets/foto-perfil.png'
+import { FaDatabase, FaLaptopCode, FaServer, FaTools } from "react-icons/fa"
 
 function App() {
 
@@ -13,14 +14,14 @@ function App() {
         </div>
         <div className='header-buttons'>
           <ul>
-            <li>SOBRE MÍ</li>
-            <li>HABILIDADES</li>
-            <li>PROYECTOS</li>
-            <li>CONTACTAME</li>
+            <li><a href="#">SOBRE MÍ</a></li>
+            <li><a href="#technologies">TECNOLOGÍAS</a></li>
+            <li><a href="#">PROYECTOS</a></li>
+            <li><a href="#">CONTACTAME</a></li>
           </ul>
         </div>
       </div>
-      <div className='user-presentation'>
+      <div id='about-me' className='user-presentation'>
         <div className='user-presentation-section'>
           <div className='user-card'>
             <h1 className='separado'>WANTED</h1> 
@@ -53,15 +54,114 @@ function App() {
         </div>
       </div>
 
-      <div className="divider">
+      <div id='technologies' className="divider">
         <div className="divider-line"></div>
         <div className="divider-orn">✦ ✦ ✦</div>
         <div className="divider-line"></div>
       </div>
 
       <div className='technologies'>
+        <div className='title-section'>
+          <p>★ ARSENAL ★</p>
+          <h1>Tecnologías</h1>
+        </div>
 
+        <div className='technologies-card-container'>
+          <div className='technologie-card-container'>
+            <div className='title-with-icon'>
+              <FaLaptopCode className="icon-title" color="#E34F26" size={30} />
+              <h3>Frontend</h3>
+            </div>
+            <div className='technologies-card'>
+                <div className='technologie'>
+                  <p>HTML5</p>
+                </div>
+                <div className='technologie'>
+                  <p>CSS3</p>
+                </div>
+                <div className='technologie'>
+                  <p>Angular</p>
+                </div>
+                <div className='technologie'>
+                  <p>React</p>
+                </div>
+                <div className='technologie'>
+                  <p>Boostrap</p>
+                </div>
+                <div className='technologie'>
+                  <p>TypeScript</p>
+                </div>
+            </div>  
+          </div>
+
+          <div className='technologie-card-container'>
+            <div className='title-with-icon'>
+              <FaServer className="icon-title" color="#68A063" size={30} />
+              <h3>Backend</h3>
+            </div>
+            <div className='technologies-card'>
+              <div className='technologie'>
+                  <p>Java</p>
+                </div>
+                <div className='technologie'>
+                  <p>Php</p>
+                </div>
+                <div className='technologie'>
+                  <p>C#</p>
+                </div>
+                <div className='technologie'>
+                  <p>Node.js</p>
+                </div>
+                <div className='technologie'>
+                  <p>Express</p>
+                </div>
+            </div>  
+          </div>
+
+          <div className='technologie-card-container'>
+            <div className='title-with-icon'>
+              <FaDatabase className="icon-title" color="#4479A1" size={30} />
+              <h3>Databases</h3>
+            </div>
+            <div className='technologies-card'>
+                <div className='technologie'>
+                  <p>MySQL</p>
+                </div>
+                <div className='technologie'>
+                  <p>PostgreSQL</p>
+                </div>
+                <div className='technologie'>
+                  <p>Prisma</p>
+                </div>
+            </div>  
+          </div>
+
+          <div className='technologie-card-container'>
+            <div className='title-with-icon'>
+              <FaTools className="icon-title" color="#F0C060" size={30} />
+              <h3>Herramientas</h3>
+            </div>
+            <div className='technologies-card'>
+              <div className='technologie'>
+                  <p>Git/GitHub</p>
+                </div>
+                <div className='technologie'>
+                  <p>Docker</p>
+                </div>
+                <div className='technologie'>
+                  <p>Postman</p>
+                </div>
+            </div>  
+          </div>
+
+        </div>
       </div>
+      <div className="divider">
+        <div className="divider-line"></div>
+        <div className="divider-orn">✦ ✦ ✦</div>
+        <div className="divider-line"></div>
+      </div>
+
       <div className='projects'>
 
       </div>
