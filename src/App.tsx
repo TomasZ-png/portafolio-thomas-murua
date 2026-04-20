@@ -1,21 +1,67 @@
 
-import { FaDesktop } from 'react-icons/fa6';
+import { FaArrowRight, FaDesktop, FaFilePdf } from 'react-icons/fa6';
 import './App.css'
 import fotoPerfil from './assets/foto-perfil.png'
 import miniaturaLya from './assets/miniatura-lya.png';
 import miniaturaAlochat from './assets/miniatura-alochat.png';
 import miniaturaPreguntame from './assets/miniatura-preguntame.png';
-import { FaDatabase, FaLaptopCode, FaServer, FaTools } from "react-icons/fa"
+import { FaDatabase, FaLaptopCode, FaServer, FaTools, FaLinkedin } from "react-icons/fa"
 import { GiMustache } from 'react-icons/gi';
 import { SiJavascript } from 'react-icons/si';
-
+import { MdEmail } from 'react-icons/md';
+import emailjs from 'emailjs-com';
+import { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { BeatLoader } from "react-spinners";
 
 function App() {
-
-
   const goToGitHub = (link: any) => {
     window.open(link, '_blank')
   } 
+
+  const [cargando, setCargando] = useState(false);
+  const [camposVacios, setCamposVacios] = useState(false);
+
+  const handleSubmitForm = (e:any) => {
+    e.preventDefault();
+
+    const form = e.target as HTMLFormElement;
+
+    const nombre = (form.elements.namedItem("nombre") as HTMLInputElement).value;
+    const correo = (form.elements.namedItem("correo") as HTMLInputElement).value;
+    const propuesta = (form.elements.namedItem("propuesta") as HTMLTextAreaElement).value;
+
+    if(!nombre.trim() || !correo.trim() || !propuesta.trim()){
+      setCamposVacios(true);
+      return;
+    }
+
+    setCamposVacios(false);
+    setCargando(true);
+
+    emailjs.sendForm(
+      "service_re5hepl", 
+      "template_7zn2tvq",
+      form,
+      "Qx1J0ya5G-D9Wg_-W"
+    ).then(
+      (result) => {
+        console.log("Mensaje enviado correctamente", result.text);
+        setTimeout(() => {
+          toast.success("Mensaje enviado con exito!");
+          setCargando(false)
+          form.reset();
+        }, 1500)
+      },
+      (error) => {
+        toast.error("Error al enviar el mensaje. Intente nuevamente mas tarde.");
+        console.log("Error al enviar el mensaje", error.text);
+        setCargando(false);
+      }
+    )
+  }
+  
 
   return (
     <div className='total-container'>
@@ -33,7 +79,7 @@ function App() {
             <li><a href="#">SOBRE MÍ</a></li>
             <li><a href="#technologies">TECNOLOGÍAS</a></li>
             <li><a href="#projects">PROYECTOS</a></li>
-            <li><a href="#">CONTACTAME</a></li>
+            <li><a href="#contacto">CONTACTAME</a></li>
           </ul>
         </div>
       </div>
@@ -57,7 +103,7 @@ function App() {
           </div>
           <div className='user-info'>
             <h1>El <span className='remarcarOro2'>Nuevo</span> Backero del Condado</h1>
-            <h3 className='separado'>FRONTEND · BACKEND · DATABASES</h3>
+            <h3 className='separado'>FRONTEND · BACKEND · BASE DE DATOS</h3>
             <p>
               Recien llegado al condado, este <span className='remarcarOro2'>backquero</span> valentia ha logrado. 
               Junto a su teclado y café, no hay desafíos que no pueda vencer. 
@@ -142,6 +188,10 @@ function App() {
                 <div className='technologie'>
                   <i className="devicon-php-plain colored"></i>
                   <p>Php</p>
+                </div>
+                <div className='technologie'>
+                  <SiJavascript color="#F7DF1E" size={18} />  
+                  <p>JavaScript</p>
                 </div>
                 <div className='technologie'>
                   <i className="devicon-csharp-plain colored"></i>
@@ -262,8 +312,8 @@ function App() {
               <div className='action-buttons'>
                 <button
                   onClick={() => goToGitHub("https://github.com/TomasZ-png/Luz-y-armonia-Angular-Node-Project")}
-                ><i className="devicon-github-original"></i> Ver en GitHub</button>
-                <button><FaDesktop /> Ir a la página</button>
+                ><i className="devicon-github-original"></i> <p>Ver en GitHub</p></button>
+                <button><FaDesktop /> <p>Ir a la página</p></button>
               </div>
             </div>
           </div>
@@ -300,8 +350,8 @@ function App() {
               <div className='action-buttons'>
                 <button
                   onClick={() => goToGitHub("https://github.com/TomasZ-png/chat-project-react")}                
-                ><i className="devicon-github-original"></i> Ver en GitHub</button>
-                <button><FaDesktop /> Ir a la página</button>
+                ><i className="devicon-github-original"></i> <p>Ver en GitHub</p></button>
+                <button><FaDesktop /> <p>Ir a la página</p></button>
               </div>
             </div>
           </div>
@@ -343,8 +393,8 @@ function App() {
               <div className='action-buttons'>
                 <button
                   onClick={() => goToGitHub("https://github.com/TomasZ-png/PW2_PREGUNTADOS")}                
-                ><i className="devicon-github-original"></i> Ver en GitHub</button>
-                <button><FaDesktop /> Ir a la página</button>
+                ><i className="devicon-github-original"></i> <p>Ver en GitHub</p></button>
+                <button><FaDesktop /> <p>Ir a la página</p></button>
               </div>
             </div>
           </div>
@@ -364,10 +414,98 @@ function App() {
 
 
 
-      <div className='contact'>
+      <div id='contacto' className='contact'>
+        <div className='title-section'>
+          <p>★ MENSAJERIA ★</p>
+          <h1>Contacto</h1>
+        </div>
 
+        <div className='contact-container'>
+          <div className='contact-subcontainer'>
+            <div className='telegrama'>
+              <h1 className='separado titulo'>TELEGRAMA</h1> 
+              <p className='debajoTitulo subtitulo remarcarClaro separado'>OFICINA DE CORREO DEL OESTE - 1876</p>
+              <hr />
+              <form onSubmit={handleSubmitForm}>
+                <label htmlFor="name" className='separado'>TU NOMBRE:</label>
+                <input id='name' type="text" name='nombre' placeholder='Ej: Jesse James'/>
+                <label htmlFor="email" className='separado'>TU CORREO:</label>
+                <input id='email' type="email" name='correo' placeholder='Ej: jjames@gmail.com'/>
+                <label htmlFor="text" className='separado'>TU PROPUESTA:</label>
+                <textarea name="propuesta" id="text" placeholder='Ej: Tengo un puesto/proyecto para usted...'></textarea>
+                {camposVacios && (
+                  <p className='error'>*Todos los campos son obligatorios</p>
+                )}
+                {cargando ?(
+                  <div className='loader'>
+                    <BeatLoader color="#5C3318" />
+                  </div>
+                ) : (
+                  <button type='submit' className='titulo separado'>
+                    ENVIAR TELEGRAMA
+                  </button>
+                )}
+                
+                <ToastContainer position="bottom-left" autoClose={4000}/>
+              </form>
+            </div>
+            <div className='contacts-container'>
+              <h2 className='titulo'>Contactate Conmigo</h2>
+              <div className='contacts-section'>
+                <a >
+                  <div className='ucontact-container'>
+                    <div className='first-section-contact'>
+                      <MdEmail  color="#D44638" size={25} />
+                      <div className='info-title-contact'>
+                        <p className='title-contact separado'>EMAIL</p>
+                        <p className='info-contact'>Mi correo electrónico laboral</p>
+                      </div>
+                    </div>
+                    <FaArrowRight className='arrow-contact' size={30} color="rgba(212,168,75,0.2)" />
+                  </div>
+                </a>
+                <a >
+                  <div className='ucontact-container'>
+                    <div className='first-section-contact'>
+                      <FaLinkedin color="#0A66C2" size={25} />
+                      <div className='info-title-contact'>
+                        <p className='title-contact separado'>LINKEDIN</p>
+                        <p className='info-contact'>Mi perfil de LinkedIn</p>
+                      </div>
+                    </div>
+                    <FaArrowRight className='arrow-contact' size={30} color="rgba(212,168,75,0.2)" />
+                  </div>
+                </a>
+                <a >
+                  <div className='ucontact-container'>
+                    <div className='first-section-contact'>
+                      <i className="devicon-github-original" style={{fontSize: "25px", color: "rgb(179, 2, 164)"}}></i>
+                      <div className='info-title-contact'>
+                        <p className='title-contact separado'>GITHUB</p>
+                        <p className='info-contact'>Mi perfil personal de GitHub</p>
+                      </div>
+                    </div>
+                    <FaArrowRight className='arrow-contact' size={30} color="rgba(212,168,75,0.2)" />
+                  </div>
+                </a>
+                <a >
+                  <div className='ucontact-container'>
+                    <div className='first-section-contact'>
+                      <FaFilePdf color="#FF0000" size={25} />
+                      <div className='info-title-contact'>
+                        <p className='title-contact separado'>CURRICULUM</p>
+                        <p className='info-contact'>Descargar mi curriculum vitae</p>
+                      </div>
+                    </div>
+                    <FaArrowRight className='arrow-contact' size={30} color="rgba(212,168,75,0.2)" style={{ transform: "rotate(90deg)"}}/>
+                  </div>
+                </a>
+              </div>
+            </div>
+        </div>
       </div>
     </div>
+  </div>
   )
 }
 

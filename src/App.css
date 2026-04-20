@@ -15,6 +15,7 @@
   --rust:     #B84C1A;
   --parch:    #D4B896;
   --parch2:   #E8D0AA;
+  --parch3:   #d4b58f;
   --ink:      #1A0D00;
   --text:     #F0E0C0;
   --muted:    #A08060;
@@ -24,6 +25,7 @@
 html{
   background-color: var(--bg);
   scroll-behavior: smooth;
+  padding-bottom: 120px;
 }
 
 
@@ -425,4 +427,169 @@ hr{
 .action-buttons button:hover{
   border: solid 1px var(--gold);
   color: var(--gold);
+}
+
+.action-buttons button p{
+  margin-top: 4.5px;
+}
+
+button{
+  font-family: 'Special Elite', cursive;
+}
+
+
+/* ================ CONTACT SECTION ================ */
+
+.contact{
+  width: 100%;
+}
+
+.contact-container{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.contact-subcontainer{
+  display: flex;
+  gap: 50px;
+  width: 100%;
+  justify-content: center;
+}
+
+.telegrama{
+  background-color: var(--parch);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  padding: 10px;
+  border: solid 5px var(--wood2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.telegrama h1{
+  font-size: 25px;
+}
+
+.telegrama .debajoTitulo{
+  font-size: 14px;
+}
+
+.telegrama hr{
+  margin: 10px 0;
+  background-color: var(--wood2);
+}
+
+.telegrama form{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 100%;
+}
+
+.telegrama form label{
+  font-size: 14px;
+  font-family: 'Special Elite', cursive;
+  color: var(--wood2);
+}
+
+.telegrama form input, textarea{
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: var(--parch3);
+  border: solid 1px var(--wood2);
+  border-bottom: solid 2px var(--wood2);
+  font-family: 'Special Elite', cursive;
+  color: var(--wood2);
+  resize: none;
+  font-size: 16px;
+}
+
+.telegrama textarea{
+  height: 120px;
+}
+
+.telegrama form input, textarea:focus{
+  outline: none;
+}
+
+.telegrama button{
+  padding: 10px;
+  border: 2px solid var(--wood2);
+  background-color: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+  transition: ease-in-out all 0.2s;
+}
+
+
+.loader{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error{
+  color: var(--rust);
+  font-family: 'Special Elite', cursive;
+  margin-bottom: 10px;
+}
+
+.contacts-container{
+  width: 100%;
+  max-width: 400px;
+}
+
+.contacts-container h2{
+  color: var(--gold);
+}
+
+.contacts-section{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ucontact-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border: solid 1px var(--wood2);
+  background-color: var(--bg3);
+  padding: 10px;
+  width: 100%;
+  max-width: 400px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out all;
+}
+
+.ucontact-container:hover{
+  border: solid 1px var(--gold);
+  background-color: var(--bg2);
+}
+
+.first-section-contact{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.first-section-contact .arrow-contact{
+  color: var(--gold);
+}
+
+.info-title-contact{
+  font-family: 'Special Elite', cursive;
+  color: var(--text);
+  line-height: 20px;
+}
+
+.title-contact{
+  color: var(--muted);
 }
