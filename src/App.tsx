@@ -1,12 +1,28 @@
 
+import { FaDesktop } from 'react-icons/fa6';
 import './App.css'
 import fotoPerfil from './assets/foto-perfil.png'
+import miniaturaLya from './assets/miniatura-lya.png';
+import miniaturaAlochat from './assets/miniatura-alochat.png';
+import miniaturaPreguntame from './assets/miniatura-preguntame.png';
 import { FaDatabase, FaLaptopCode, FaServer, FaTools } from "react-icons/fa"
+import { GiMustache } from 'react-icons/gi';
+import { SiJavascript } from 'react-icons/si';
+
 
 function App() {
 
+
+  const goToGitHub = (link: any) => {
+    window.open(link, '_blank')
+  } 
+
   return (
     <div className='total-container'>
+
+
+{    /* ============ HEADER ============  */}
+
       <div className='header'>
         <div className='header-user-brand'>
           <h1>Murua Thomas</h1>
@@ -16,11 +32,16 @@ function App() {
           <ul>
             <li><a href="#">SOBRE MÍ</a></li>
             <li><a href="#technologies">TECNOLOGÍAS</a></li>
-            <li><a href="#">PROYECTOS</a></li>
+            <li><a href="#projects">PROYECTOS</a></li>
             <li><a href="#">CONTACTAME</a></li>
           </ul>
         </div>
       </div>
+
+
+    {/* ============ USUARIO ============  */}
+
+
       <div id='about-me' className='user-presentation'>
         <div className='user-presentation-section'>
           <div className='user-card'>
@@ -59,6 +80,10 @@ function App() {
         <div className="divider-orn">✦ ✦ ✦</div>
         <div className="divider-line"></div>
       </div>
+    
+    
+    {/* ============ TECNOLOGIAS ============  */}
+
 
       <div className='technologies'>
         <div className='title-section'>
@@ -73,22 +98,32 @@ function App() {
               <h3>Frontend</h3>
             </div>
             <div className='technologies-card'>
-                <div className='technologie'>
+                {/* <div className='technologie'>
+                  <i className="devicon-html5-plain colored"></i>
                   <p>HTML5</p>
                 </div>
                 <div className='technologie'>
+                  <i className="devicon-css3-plain colored"></i>
                   <p>CSS3</p>
+                </div> */}
+                <div className='technologie'>
+                  <SiJavascript color="#F7DF1E" size={18} />  
+                  <p>JavaScript</p>
                 </div>
                 <div className='technologie'>
+                  <i className="devicon-angularjs-plain colored"></i>
                   <p>Angular</p>
                 </div>
                 <div className='technologie'>
+                  <i className="devicon-react-original colored"></i>
                   <p>React</p>
                 </div>
                 <div className='technologie'>
+                  <i className="devicon-bootstrap-plain colored"></i>
                   <p>Boostrap</p>
                 </div>
                 <div className='technologie'>
+                  <i className="devicon-typescript-plain colored"></i>
                   <p>TypeScript</p>
                 </div>
             </div>  
@@ -101,18 +136,23 @@ function App() {
             </div>
             <div className='technologies-card'>
               <div className='technologie'>
+                  <i className="devicon-java-plain colored"></i>
                   <p>Java</p>
                 </div>
                 <div className='technologie'>
+                  <i className="devicon-php-plain colored"></i>
                   <p>Php</p>
                 </div>
                 <div className='technologie'>
+                  <i className="devicon-csharp-plain colored"></i>
                   <p>C#</p>
                 </div>
                 <div className='technologie'>
+                  <i className="devicon-nodejs-plain colored"></i>
                   <p>Node.js</p>
                 </div>
                 <div className='technologie'>
+                  <i className="devicon-express-original "></i>
                   <p>Express</p>
                 </div>
             </div>  
@@ -121,16 +161,19 @@ function App() {
           <div className='technologie-card-container'>
             <div className='title-with-icon'>
               <FaDatabase className="icon-title" color="#4479A1" size={30} />
-              <h3>Databases</h3>
+              <h3>Base de datos</h3>
             </div>
             <div className='technologies-card'>
                 <div className='technologie'>
+                  <i className="devicon-mysql-plain colored"></i>
                   <p>MySQL</p>
                 </div>
                 <div className='technologie'>
+                  <i className="devicon-postgresql-plain colored"></i>
                   <p>PostgreSQL</p>
                 </div>
                 <div className='technologie'>
+                  <i className="devicon-prisma-original colored"></i>
                   <p>Prisma</p>
                 </div>
             </div>  
@@ -143,12 +186,16 @@ function App() {
             </div>
             <div className='technologies-card'>
               <div className='technologie'>
+                  <i className="devicon-git-plain colored"></i>
+                  <i className="devicon-github-original "></i>
                   <p>Git/GitHub</p>
                 </div>
                 <div className='technologie'>
+                  <i className="devicon-docker-plain colored"></i>
                   <p>Docker</p>
                 </div>
                 <div className='technologie'>
+                  <i className="devicon-postman-plain colored"></i>
                   <p>Postman</p>
                 </div>
             </div>  
@@ -162,9 +209,161 @@ function App() {
         <div className="divider-line"></div>
       </div>
 
-      <div className='projects'>
 
+    {/* ============ PROYECTOS ============  */}
+
+
+      <div id='projects' className='projects'>
+        <div className='title-section'>
+          <p>★ HISTORIAL ★</p>
+          <h1>Proyectos Hechos</h1>
+        </div>
+
+      <div className='total-container-projects'>
+        <div className='projects-card-container'>
+          <div className='project-container'>
+            <img src={miniaturaLya} alt="" />
+            <div className='context-project'>
+              <div className='info-project'>
+                <p className='subtitulo-title'>TIENDA ONLINE</p>
+                <h2 className='titulo remarcarTexto'>Luz y Armonía</h2>
+                <p className='subtitulo texto-descriptivo'>
+                  Luz & Armonía es un e-commerce desarrollado con Angular y Node.js para la venta de velas, difusores y body splash. 
+                  Incluye catálogo con buscador, carrito, compras con Mercado Pago, historial, favoritos y comentarios. 
+                  Cuenta además con un panel de administración para gestionar productos, stock y pedidos.
+                </p>
+              </div>
+              <hr />
+              <div className='technologies-applied'>
+                <div className='technologie'>
+                    <i className="devicon-angularjs-plain colored"></i>
+                    <p>Angular</p>
+                </div>
+                
+                <div className='technologie'>
+                    <i className="devicon-nodejs-plain colored"></i>
+                    <p>Node.js</p>
+                </div>
+
+                <div className='technologie'>
+                    <i className="devicon-postgresql-plain colored"></i>
+                    <p>PostgreSQL</p>
+                </div>
+
+                <div className='technologie'>
+                    <i className="devicon-prisma-original colored"></i>
+                    <p>Prisma</p>
+                </div>
+                <div className='technologie'>
+                    <i className="devicon-express-original "></i>
+                    <p>Express</p>
+                  </div>
+              </div>
+              <div className='action-buttons'>
+                <button
+                  onClick={() => goToGitHub("https://github.com/TomasZ-png/Luz-y-armonia-Angular-Node-Project")}
+                ><i className="devicon-github-original"></i> Ver en GitHub</button>
+                <button><FaDesktop /> Ir a la página</button>
+              </div>
+            </div>
+          </div>
+
+          <div className='project-container'>
+            <img src={miniaturaAlochat} alt="" />
+            <div className='context-project'>
+              <div className='info-project'>
+                <p className='subtitulo-title'>CHAT ONLINE</p>
+                <h2 className='titulo remarcarTexto'>AloChat</h2>
+                <p className='subtitulo texto-descriptivo'>
+                  AloChat es una aplicación de mensajería en tiempo real que permite agregar contactos mediante número de teléfono 
+                  y comunicarse en chats individuales o grupales. 
+                  Soporta envío de mensajes e imágenes, con una interfaz moderna y dinámica orientada a una experiencia fluida.
+                </p>
+              </div>
+              <hr />
+              <div className='technologies-applied'>
+                <div className='technologie'>
+                  <i className="devicon-react-original colored"></i>
+                  <p>React</p>
+                </div>
+                
+                <div className='technologie'>
+                    <i className="devicon-nodejs-plain colored"></i>
+                    <p>Node.js</p>
+                </div>
+
+                <div className='technologie'>
+                    <i className="devicon-postgresql-plain colored"></i>
+                    <p>PostgreSQL</p>
+                </div>
+              </div>
+              <div className='action-buttons'>
+                <button
+                  onClick={() => goToGitHub("https://github.com/TomasZ-png/chat-project-react")}                
+                ><i className="devicon-github-original"></i> Ver en GitHub</button>
+                <button><FaDesktop /> Ir a la página</button>
+              </div>
+            </div>
+          </div>
+          <div className='project-container'>
+            <img src={miniaturaPreguntame} alt="" />
+            <div className='context-project'>
+              <div className='info-project'>
+                <p className='subtitulo-title'>VIDEOJUEGO</p>
+                <h2 className='titulo remarcarTexto'>Preguntame</h2>
+                <p className='subtitulo texto-descriptivo'>
+                  Preguntame es una aplicación web en PHP inspirada en Preguntados, donde el usuario responde preguntas por categorías 
+                  mediante una ruleta para avanzar de nivel. Incluye perfil con estadísticas y ubicación,
+                  sugerencia y reporte de contenido, y un panel de administración con métricas, gráficos y reportes en PDF.
+                </p>
+              </div>
+              <hr />
+              <div className='technologies-applied'>
+                <div className='technologie'>
+                  <i className="devicon-php-plain colored"></i>
+                  <p>Php</p>
+                </div>
+                
+                <div className='technologie'>
+                  <GiMustache color="#B84C1A" size={20} />                  
+                  <p>Mustache</p>
+                </div>
+
+                <div className='technologie'>
+                  <SiJavascript color="#F7DF1E" size={18} />  
+                  <p>JavaScript</p>
+                </div>
+
+                <div className='technologie'>
+                  <i className="devicon-mysql-plain colored"></i>
+                  <p>MySQL</p>
+                </div>
+
+              </div>
+              <div className='action-buttons'>
+                <button
+                  onClick={() => goToGitHub("https://github.com/TomasZ-png/PW2_PREGUNTADOS")}                
+                ><i className="devicon-github-original"></i> Ver en GitHub</button>
+                <button><FaDesktop /> Ir a la página</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
+
+
+      <div className="divider">
+        <div className="divider-line"></div>
+        <div className="divider-orn">✦ ✦ ✦</div>
+        <div className="divider-line"></div>
+      </div>
+
+
+    {/* ============ CONTACTO ============  */}
+
+
+
       <div className='contact'>
 
       </div>
