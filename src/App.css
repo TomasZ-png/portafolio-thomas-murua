@@ -25,7 +25,7 @@
 html{
   background-color: var(--bg);
   scroll-behavior: smooth;
-  padding-bottom: 50px;
+  padding-bottom: 120px;
 }
 
 
@@ -526,6 +526,19 @@ button{
   transition: ease-in-out all 0.2s;
 }
 
+
+.loader{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error{
+  color: var(--rust);
+  font-family: 'Special Elite', cursive;
+  margin-bottom: 10px;
+}
+
 .contacts-container{
   width: 100%;
   max-width: 400px;
@@ -579,5 +592,4 @@ button{
 
 .title-contact{
   color: var(--muted);
-  color: rgb(179, 2, 164);
 }

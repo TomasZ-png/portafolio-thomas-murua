@@ -1,5 +1,5 @@
 
-import { FaArrowRight, FaDesktop, FaEnvelope, FaFilePdf } from 'react-icons/fa6';
+import { FaArrowRight, FaDesktop, FaFilePdf } from 'react-icons/fa6';
 import './App.css'
 import fotoPerfil from './assets/foto-perfil.png'
 import miniaturaLya from './assets/miniatura-lya.png';
@@ -9,14 +9,59 @@ import { FaDatabase, FaLaptopCode, FaServer, FaTools, FaLinkedin } from "react-i
 import { GiMustache } from 'react-icons/gi';
 import { SiJavascript } from 'react-icons/si';
 import { MdEmail } from 'react-icons/md';
-
+import emailjs from 'emailjs-com';
+import { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { BeatLoader } from "react-spinners";
 
 function App() {
-
-
   const goToGitHub = (link: any) => {
     window.open(link, '_blank')
   } 
+
+  const [cargando, setCargando] = useState(false);
+  const [camposVacios, setCamposVacios] = useState(false);
+
+  const handleSubmitForm = (e:any) => {
+    e.preventDefault();
+
+    const form = e.target as HTMLFormElement;
+
+    const nombre = (form.elements.namedItem("nombre") as HTMLInputElement).value;
+    const correo = (form.elements.namedItem("correo") as HTMLInputElement).value;
+    const propuesta = (form.elements.namedItem("propuesta") as HTMLTextAreaElement).value;
+
+    if(!nombre.trim() || !correo.trim() || !propuesta.trim()){
+      setCamposVacios(true);
+      return;
+    }
+
+    setCamposVacios(false);
+    setCargando(true);
+
+    emailjs.sendForm(
+      "service_re5hepl", 
+      "template_7zn2tvq",
+      form,
+      "Qx1J0ya5G-D9Wg_-W"
+    ).then(
+      (result) => {
+        console.log("Mensaje enviado correctamente", result.text);
+        setTimeout(() => {
+          toast.success("Mensaje enviado con exito!");
+          setCargando(false)
+          form.reset();
+        }, 1500)
+      },
+      (error) => {
+        toast.error("Error al enviar el mensaje. Intente nuevamente mas tarde.");
+        console.log("Error al enviar el mensaje", error.text);
+        setCargando(false);
+      }
+    )
+  }
+  
 
   return (
     <div className='total-container'>
@@ -381,14 +426,27 @@ function App() {
               <h1 className='separado titulo'>TELEGRAMA</h1> 
               <p className='debajoTitulo subtitulo remarcarClaro separado'>OFICINA DE CORREO DEL OESTE - 1876</p>
               <hr />
-              <form action="">
+              <form onSubmit={handleSubmitForm}>
                 <label htmlFor="name" className='separado'>TU NOMBRE:</label>
                 <input id='name' type="text" name='nombre' placeholder='Ej: Jesse James'/>
                 <label htmlFor="email" className='separado'>TU CORREO:</label>
                 <input id='email' type="email" name='correo' placeholder='Ej: jjames@gmail.com'/>
                 <label htmlFor="text" className='separado'>TU PROPUESTA:</label>
                 <textarea name="propuesta" id="text" placeholder='Ej: Tengo un puesto/proyecto para usted...'></textarea>
-                <button type='submit' className='titulo separado'>ENVIAR TELEGRAMA</button>
+                {camposVacios && (
+                  <p className='error'>*Todos los campos son obligatorios</p>
+                )}
+                {cargando ?(
+                  <div className='loader'>
+                    <BeatLoader color="#5C3318" />
+                  </div>
+                ) : (
+                  <button type='submit' className='titulo separado'>
+                    ENVIAR TELEGRAMA
+                  </button>
+                )}
+                
+                <ToastContainer position="bottom-left" autoClose={4000}/>
               </form>
             </div>
             <div className='contacts-container'>
