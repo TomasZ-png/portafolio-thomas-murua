@@ -16,9 +16,16 @@ import 'react-toastify/dist/ReactToastify.css';
 import { BeatLoader } from "react-spinners";
 
 function App() {
-  const goToGitHub = (link: any) => {
+  const goToLink = (link: any) => {
     window.open(link, '_blank')
   } 
+
+  const descargarCV = () => {
+    const link = document.createElement("a");
+    link.href = '../public/AdaptaTrip.pdf';
+    link.download = "AdaptaTrip.pdf";
+    link.click();
+  };
 
   const [cargando, setCargando] = useState(false);
   const [camposVacios, setCamposVacios] = useState(false);
@@ -253,17 +260,17 @@ function App() {
 
         </div>
       </div>
-      <div className="divider">
+      <div  className="divider">
         <div className="divider-line"></div>
         <div className="divider-orn">✦ ✦ ✦</div>
-        <div className="divider-line"></div>
+        <div id='projects' className="divider-line"></div>
       </div>
 
 
     {/* ============ PROYECTOS ============  */}
 
 
-      <div id='projects' className='projects'>
+      <div className='projects'>
         <div className='title-section'>
           <p>★ HISTORIAL ★</p>
           <h1>Proyectos Hechos</h1>
@@ -311,7 +318,7 @@ function App() {
               </div>
               <div className='action-buttons'>
                 <button
-                  onClick={() => goToGitHub("https://github.com/TomasZ-png/Luz-y-armonia-Angular-Node-Project")}
+                  onClick={() => goToLink("https://github.com/TomasZ-png/Luz-y-armonia-Angular-Node-Project")}
                 ><i className="devicon-github-original"></i> <p>Ver en GitHub</p></button>
                 <button><FaDesktop /> <p>Ir a la página</p></button>
               </div>
@@ -349,7 +356,7 @@ function App() {
               </div>
               <div className='action-buttons'>
                 <button
-                  onClick={() => goToGitHub("https://github.com/TomasZ-png/chat-project-react")}                
+                  onClick={() => goToLink("https://github.com/TomasZ-png/chat-project-react")}                
                 ><i className="devicon-github-original"></i> <p>Ver en GitHub</p></button>
                 <button><FaDesktop /> <p>Ir a la página</p></button>
               </div>
@@ -392,7 +399,7 @@ function App() {
               </div>
               <div className='action-buttons'>
                 <button
-                  onClick={() => goToGitHub("https://github.com/TomasZ-png/PW2_PREGUNTADOS")}                
+                  onClick={() => goToLink("https://github.com/TomasZ-png/PW2_PREGUNTADOS")}                
                 ><i className="devicon-github-original"></i> <p>Ver en GitHub</p></button>
                 <button><FaDesktop /> <p>Ir a la página</p></button>
               </div>
@@ -452,54 +459,50 @@ function App() {
             <div className='contacts-container'>
               <h2 className='titulo'>Contactate Conmigo</h2>
               <div className='contacts-section'>
-                <a >
-                  <div className='ucontact-container'>
-                    <div className='first-section-contact'>
-                      <MdEmail  color="#D44638" size={25} />
-                      <div className='info-title-contact'>
-                        <p className='title-contact separado'>EMAIL</p>
-                        <p className='info-contact'>Mi correo electrónico laboral</p>
-                      </div>
+                
+                <div onClick={() => goToLink("mailto: muruathomasn@gmail.com")} className='ucontact-container'>
+                  <div className='first-section-contact'>
+                    <MdEmail  color="#D44638" size={25} />
+                    <div className='info-title-contact'>
+                      <p className='title-contact separado'>EMAIL</p>
+                      <p className='info-contact'>Mi correo electrónico laboral</p>
                     </div>
-                    <FaArrowRight className='arrow-contact' size={30} color="rgba(212,168,75,0.2)" />
                   </div>
-                </a>
-                <a >
-                  <div className='ucontact-container'>
-                    <div className='first-section-contact'>
-                      <FaLinkedin color="#0A66C2" size={25} />
-                      <div className='info-title-contact'>
-                        <p className='title-contact separado'>LINKEDIN</p>
-                        <p className='info-contact'>Mi perfil de LinkedIn</p>
-                      </div>
+                  <FaArrowRight className='arrow-contact' size={30} color="rgba(212,168,75,0.2)" />
+                </div>
+
+                <div onClick={() => (goToLink("https://www.linkedin.com/in/thomas-murua-278a83261/"))} className='ucontact-container'>
+                  <div className='first-section-contact'>
+                    <FaLinkedin color="#0A66C2" size={25} />
+                    <div className='info-title-contact'>
+                      <p className='title-contact separado'>LINKEDIN</p>
+                      <p className='info-contact'>Mi perfil de LinkedIn</p>
                     </div>
-                    <FaArrowRight className='arrow-contact' size={30} color="rgba(212,168,75,0.2)" />
                   </div>
-                </a>
-                <a >
-                  <div className='ucontact-container'>
-                    <div className='first-section-contact'>
-                      <i className="devicon-github-original" style={{fontSize: "25px", color: "rgb(179, 2, 164)"}}></i>
-                      <div className='info-title-contact'>
-                        <p className='title-contact separado'>GITHUB</p>
-                        <p className='info-contact'>Mi perfil personal de GitHub</p>
-                      </div>
+                  <FaArrowRight className='arrow-contact' size={30} color="rgba(212,168,75,0.2)" />
+                </div>
+              
+                <div onClick={() => goToLink("https://github.com/TomasZ-png")} className='ucontact-container'>
+                  <div className='first-section-contact'>
+                    <i className="devicon-github-original" style={{fontSize: "25px", color: "rgb(179, 2, 164)"}}></i>
+                    <div className='info-title-contact'>
+                      <p className='title-contact separado'>GITHUB</p>
+                      <p className='info-contact'>Mi perfil personal de GitHub</p>
                     </div>
-                    <FaArrowRight className='arrow-contact' size={30} color="rgba(212,168,75,0.2)" />
                   </div>
-                </a>
-                <a >
-                  <div className='ucontact-container'>
-                    <div className='first-section-contact'>
-                      <FaFilePdf color="#FF0000" size={25} />
-                      <div className='info-title-contact'>
-                        <p className='title-contact separado'>CURRICULUM</p>
-                        <p className='info-contact'>Descargar mi curriculum vitae</p>
-                      </div>
+                  <FaArrowRight className='arrow-contact' size={30} color="rgba(212,168,75,0.2)" />
+                </div>
+
+                <div onClick={descargarCV} className='ucontact-container'>
+                  <div className='first-section-contact'>
+                    <FaFilePdf color="#FF0000" size={25} />
+                    <div className='info-title-contact'>
+                      <p className='title-contact separado'>CURRICULUM</p>
+                      <p className='info-contact'>Descargar mi curriculum vitae</p>
                     </div>
-                    <FaArrowRight className='arrow-contact' size={30} color="rgba(212,168,75,0.2)" style={{ transform: "rotate(90deg)"}}/>
                   </div>
-                </a>
+                  <FaArrowRight className='arrow-contact' size={30} color="rgba(212,168,75,0.2)" style={{ transform: "rotate(90deg)"}}/>
+                </div>
               </div>
             </div>
         </div>
