@@ -76,6 +76,7 @@ html{
   position: sticky;
   top: 0;
   z-index: 1000;
+  width: 100%;
 }
 
 .header-user-brand {
@@ -238,6 +239,11 @@ hr{
 
 /* ================ TECNOLOGIAS ================ */
 
+/* .technologies{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+} */
 
 .title-section{
   text-align: center;
@@ -592,4 +598,79 @@ button{
 
 .title-contact{
   color: var(--muted);
+}
+
+
+@media(max-width: 948px) {
+  .technologies-card-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media(max-width: 768px) {
+  .header{
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .projects-card-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+  }
+  
+}
+
+@media(max-width: 654px) {
+  .technologies-card-container{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .projects-card-container{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .user-presentation-section{
+    flex-direction: column;
+  }
+
+  .user-presentation-section .user-info{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact-subcontainer{
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media(max-width: 500px) {
+  .header .header-user-brand {
+    text-align: center;
+  }
+  .header .header-user-brand h1{
+    font-size: 20px;
+  }
+
+  .header .header-user-brand p{
+    font-size: 10px;
+  }
+  
+  .header .header-buttons ul{
+    gap: 10px;
+  }
+    .header .header-buttons ul li a{
+    /* display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px; */
+
+    font-size: 14px;
+  }
 }
