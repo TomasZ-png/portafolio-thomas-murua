@@ -14,6 +14,7 @@ import { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { BeatLoader } from "react-spinners";
+import cvFile from './assets/MURUA_THOMAS_CV.pdf';
 
 function App() {
   const goToLink = (link: any) => {
@@ -22,8 +23,8 @@ function App() {
 
   const descargarCV = () => {
     const link = document.createElement("a");
-    link.href = '../public/AdaptaTrip.pdf';
-    link.download = "AdaptaTrip.pdf";
+    link.href = cvFile;
+    link.download = "MURUA_THOMAS_CV.pdf";
     link.click();
   };
 
@@ -173,7 +174,7 @@ function App() {
                 </div>
                 <div className='technologie'>
                   <i className="devicon-bootstrap-plain colored"></i>
-                  <p>Boostrap</p>
+                  <p>Bootstrap</p>
                 </div>
                 <div className='technologie'>
                   <i className="devicon-typescript-plain colored"></i>
@@ -194,7 +195,7 @@ function App() {
                 </div>
                 <div className='technologie'>
                   <i className="devicon-php-plain colored"></i>
-                  <p>Php</p>
+                  <p>PHP</p>
                 </div>
                 <div className='technologie'>
                   <SiJavascript color="#F7DF1E" size={18} />  
@@ -378,7 +379,7 @@ function App() {
               <div className='technologies-applied'>
                 <div className='technologie'>
                   <i className="devicon-php-plain colored"></i>
-                  <p>Php</p>
+                  <p>PHP</p>
                 </div>
                 
                 <div className='technologie'>
