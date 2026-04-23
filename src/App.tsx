@@ -2,6 +2,7 @@
 import { FaArrowRight, FaDesktop, FaFilePdf } from 'react-icons/fa6';
 import './App.css'
 import fotoPerfil from './assets/foto-perfil.png'
+import avatarPerfil from './assets/avatar.png'
 import miniaturaLya from './assets/miniatura-lya.png';
 import miniaturaAlochat from './assets/miniatura-alochat.png';
 import miniaturaPreguntame from './assets/miniatura-preguntame.png';
@@ -84,10 +85,11 @@ function App() {
         </div>
         <div className='header-buttons'>
           <ul>
-            <li><a href="#">SOBRE MÍ</a></li>
+            <li><a href="#">INICIO</a></li>
+            <li><a href="#about-me">SOBRE MÍ</a></li>
             <li><a href="#technologies">TECNOLOGÍAS</a></li>
             <li><a href="#projects">PROYECTOS</a></li>
-            <li><a href="#contacto">CONTACTAME</a></li>
+            <li><a href="#contacto">CONTACTO</a></li>
           </ul>
         </div>
       </div>
@@ -95,8 +97,8 @@ function App() {
 
     {/* ============ USUARIO ============  */}
 
-
-      <div id='about-me' className='user-presentation'>
+<div className='total'>
+      <div className='user-presentation'>
         <div className='user-presentation-section'>
           <div className='user-card'>
             <h1 className='separado'>WANTED</h1> 
@@ -113,21 +115,66 @@ function App() {
             <h1>El <span className='remarcarOro2'>Nuevo</span> Backero del Condado</h1>
             <h3 className='separado'>FRONTEND · BACKEND · BASE DE DATOS</h3>
             <p>
-              Recien llegado al condado, este <span className='remarcarOro2'>backquero</span> valentia ha logrado. 
+              Recién llegado al condado, este <span className='remarcarOro2'>backquero</span> valentía ha logrado. 
               Junto a su teclado y café, no hay desafíos que no pueda vencer. 
               Especializado en desarrollo backend y frontend, domina <span className='remarcarOro2'>POO</span>, <span className='remarcarOro2'>base de datos</span> y construcción de <span className='remarcarOro2'>aplicaciones web</span>. 
               <br />
               <br />
-              El programador mas suelto del oeste, maneja distintas tecnologías y resuelve problemas con <span className='remarcarOro2'>lógica</span> y <span className='remarcarOro2'>precisión</span>.
+              El programador más suelto del oeste, maneja distintas tecnologías y resuelve problemas con <span className='remarcarOro2'>lógica</span> y <span className='remarcarOro2'>precisión</span>.
               <br />
               Prefiere el trabajo en grupo antes que la soledad del desierto, enfrentando cada desafío hasta verlo resuelto. 
               <br />
               <br />
               Porque en este pueblo los problemas no se esquivan, se <span className='remarcarOro2'>resuelven</span>.
             </p>
+
           </div>
         </div>
       </div>
+
+      <div id='about-me' className="divider">
+        <div className="divider-line"></div>
+        <div className="divider-orn">✦ ✦ ✦</div>
+        <div className="divider-line"></div>
+      </div>
+
+    <div className='about-me-container'>
+        <div className='title-section'>
+          <p>★ PERFIL ★</p>
+          <h1>Sobre Mí</h1>
+        </div>
+      <div className='about-me-avatar-info-container'>
+        <div className='avatar-info-container'>
+          <div className='info-container'>
+            <h1><span className='remarcarOro'>Thomas Murua</span></h1>
+            <p className='about-me-text-container'>
+              ¡Hola! Soy <span className='remarcarOro2'>desarrollador web fullstack</span> enfocado en la programación backend, utilizando tecnologías
+              como <span className='remarcarOro2'><code>Java/Spring-MVC, C#/.NET y Node.js</code></span>. Me centro mucho en entender la lógica de un proyecto. 
+              Luego la aplico con <span className='remarcarOro2'>buenas prácticas de programación, seguridad y testing <code>(JUnit/XUnit)</code></span>, 
+              manteniendo código bajo principios <span className='remarcarOro2'>SOLID</span>.
+              <br />
+              <br />
+              También disfruto aplicar <span className='remarcarOro2'>diseño atractivo y responsive</span> para los usuarios, desarrollando una UX profesional 
+              que genere una buena primera impresión al cliente. Utilizo tecnologías como 
+              <span className='remarcarOro2'> <code>Angular/TypeScript, React, Thymeleaf y JavaScript</code></span>. 
+              <br />
+              <br />
+              Me gusta conocer y aprender nuevas tecnologías. Disfruto los retos, ya que los considero un activo
+              importante para el <span className='remarcarOro2'>aprendizaje y crecimiento</span> como programador. Actualmente estoy cursando mi último año 
+              de <span className='remarcarOro2'>Tecnicatura en Desarrollo Web</span>, complementando mis prácticas con fundamentos académicos.
+              <br />
+              <br />
+              Me caracterizo por <span className='remarcarOro2'>trabajar en equipo</span>, asumir responsabilidades y aportar soluciones claras en entornos colaborativos. 
+              Estoy abierto a <span className='remarcarOro2'>nuevas oportunidades laborales o proyectos freelance</span>. 
+              <br />
+              Si desea tenerme en cuenta, <a className='goToContacto' href="#contacto">¡no dude en enviarme su propuesta!</a>
+            </p>
+          </div>
+        <img src={avatarPerfil} alt="" />
+        </div>
+      </div>
+    </div>
+
 
       <div id='technologies' className="divider">
         <div className="divider-line"></div>
@@ -143,6 +190,7 @@ function App() {
         <div className='title-section'>
           <p>★ ARSENAL ★</p>
           <h1>Tecnologías</h1>
+          <p className='subtitle'>Tecnologías y Herramientas que manejo con destreza</p>
         </div>
 
         <div className='technologies-card-container'>
@@ -155,11 +203,11 @@ function App() {
                 {/* <div className='technologie'>
                   <i className="devicon-html5-plain colored"></i>
                   <p>HTML5</p>
-                </div>
-                <div className='technologie'>
+                  </div>
+                  <div className='technologie'>
                   <i className="devicon-css3-plain colored"></i>
                   <p>CSS3</p>
-                </div> */}
+                  </div> */}
                 <div className='technologie'>
                   <SiJavascript color="#F7DF1E" size={18} />  
                   <p>JavaScript</p>
@@ -275,6 +323,7 @@ function App() {
         <div className='title-section'>
           <p>★ HISTORIAL ★</p>
           <h1>Proyectos Hechos</h1>
+          <p className='subtitle'>Mis aventuras y creaciones en el lejano oeste digital</p>
         </div>
 
       <div className='total-container-projects'>
@@ -320,7 +369,7 @@ function App() {
               <div className='action-buttons'>
                 <button
                   onClick={() => goToLink("https://github.com/TomasZ-png/Luz-y-armonia-Angular-Node-Project")}
-                ><i className="devicon-github-original"></i> <p>Ver en GitHub</p></button>
+                  ><i className="devicon-github-original"></i> <p>Ver en GitHub</p></button>
                 <button><FaDesktop /> <p>Ir a la página</p></button>
               </div>
             </div>
@@ -358,7 +407,7 @@ function App() {
               <div className='action-buttons'>
                 <button
                   onClick={() => goToLink("https://github.com/TomasZ-png/chat-project-react")}                
-                ><i className="devicon-github-original"></i> <p>Ver en GitHub</p></button>
+                  ><i className="devicon-github-original"></i> <p>Ver en GitHub</p></button>
                 <button><FaDesktop /> <p>Ir a la página</p></button>
               </div>
             </div>
@@ -426,6 +475,7 @@ function App() {
         <div className='title-section'>
           <p>★ MENSAJERIA ★</p>
           <h1>Contacto</h1>
+          <p className='subtitle'>Enviá tu telegrama o propuesta al sheriff del código</p>
         </div>
 
         <div className='contact-container'>
@@ -458,7 +508,7 @@ function App() {
               </form>
             </div>
             <div className='contacts-container'>
-              <h2 className='titulo'>Contactate Conmigo</h2>
+              <h2 className='titulo'>Conoceme mas en <span className='remarcarOro'>Mis Redes Sociales</span></h2>
               <div className='contacts-section'>
                 
                 <div onClick={() => goToLink("mailto: muruathomasn@gmail.com")} className='ucontact-container'>
@@ -510,6 +560,7 @@ function App() {
       </div>
     </div>
   </div>
+</div>
   )
 }
 
