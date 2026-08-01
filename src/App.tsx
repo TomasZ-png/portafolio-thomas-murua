@@ -1,5 +1,5 @@
 
-import { FaArrowRight, FaDesktop, FaFilePdf } from 'react-icons/fa6';
+import { FaArrowRight, FaFilePdf } from 'react-icons/fa6';
 import './App.css'
 import fotoPerfil from './assets/foto-perfil.jpeg'
 import avatarPerfil from './assets/avatar.png'
@@ -16,7 +16,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { BeatLoader } from "react-spinners";
 import cvFile from './assets/MURUA_THOMAS_CV.pdf';
-const url_chat_project = 'https://chat-project-react-eta.vercel.app/login';
 
 function App() {
   const goToLink = (link: any) => {
