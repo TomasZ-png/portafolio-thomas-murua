@@ -32,6 +32,41 @@ html{
   padding: 10px;
 }
 
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Fondo de la barra */
+::-webkit-scrollbar-track {
+  background: var(--ink);
+}
+
+/* Color del scroll */
+::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold2);
+}
+
+
+/* ================ ANIMACIONES ================ */
+
+
+.seccion{
+  opacity: 1;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.seccion .visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* ================ TEXTO ================ */
 
 
@@ -134,7 +169,7 @@ html{
 
 .user-presentation{
   font-family: 'Rye', serif;
-  margin-top: 120px;
+  margin-top: 100px;
   display: flex;
   justify-content: center;
   padding: 0 20px;
@@ -166,6 +201,8 @@ html{
 .user-card img{
   width: 100%;
   max-width: 220px;
+  max-height: 280px;
+  object-fit: cover;
 }
 
 hr{

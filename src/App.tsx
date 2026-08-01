@@ -1,14 +1,14 @@
 
 import { FaArrowRight, FaDesktop, FaFilePdf } from 'react-icons/fa6';
 import './App.css'
-import fotoPerfil from './assets/foto-perfil.png'
+import fotoPerfil from './assets/foto-perfil.jpeg'
 import avatarPerfil from './assets/avatar.png'
 import miniaturaLya from './assets/miniatura-lya.png';
 import miniaturaAlochat from './assets/miniatura-alochat.png';
 import miniaturaPreguntame from './assets/miniatura-preguntame.png';
 import { FaDatabase, FaLaptopCode, FaServer, FaTools, FaLinkedin } from "react-icons/fa"
 import { GiMustache } from 'react-icons/gi';
-import { SiJavascript } from 'react-icons/si';
+import { SiDotnet, SiJavascript } from 'react-icons/si';
 import { MdEmail } from 'react-icons/md';
 import emailjs from 'emailjs-com';
 import { useState } from 'react';
@@ -16,6 +16,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { BeatLoader } from "react-spinners";
 import cvFile from './assets/MURUA_THOMAS_CV.pdf';
+const url_chat_project = 'https://chat-project-react-eta.vercel.app/login';
 
 function App() {
   const goToLink = (link: any) => {
@@ -98,7 +99,7 @@ function App() {
     {/* ============ USUARIO ============  */}
 
 <div className='total'>
-      <div className='user-presentation'>
+      <div className='seccion user-presentation'>
         <div className='user-presentation-section'>
           <div className='user-card'>
             <h1 className='separado'>WANTED</h1> 
@@ -246,12 +247,16 @@ function App() {
                   <p>PHP</p>
                 </div>
                 <div className='technologie'>
-                  <SiJavascript color="#F7DF1E" size={18} />  
-                  <p>JavaScript</p>
+                  <SiDotnet size={18} color="#512BD4" />
+                  <p>.NET</p>
                 </div>
                 <div className='technologie'>
                   <i className="devicon-csharp-plain colored"></i>
                   <p>C#</p>
+                </div>
+                <div className='technologie'>
+                  <SiJavascript color="#F7DF1E" size={18} />  
+                  <p>JavaScript</p>
                 </div>
                 <div className='technologie'>
                   <i className="devicon-nodejs-plain colored"></i>
@@ -370,7 +375,7 @@ function App() {
                 <button
                   onClick={() => goToLink("https://github.com/TomasZ-png/Luz-y-armonia-Angular-Node-Project")}
                   ><i className="devicon-github-original"></i> <p>Ver en GitHub</p></button>
-                <button><FaDesktop /> <p>Ir a la página</p></button>
+                {/* <button><FaDesktop /> <p>Ir a la página</p></button> */}
               </div>
             </div>
           </div>
@@ -408,7 +413,7 @@ function App() {
                 <button
                   onClick={() => goToLink("https://github.com/TomasZ-png/chat-project-react")}                
                   ><i className="devicon-github-original"></i> <p>Ver en GitHub</p></button>
-                <button><FaDesktop /> <p>Ir a la página</p></button>
+                {/* <button onClick={() => goToLink(url_chat_project)}><FaDesktop /> <p>Ir a la página</p></button> */}
               </div>
             </div>
           </div>
@@ -451,7 +456,7 @@ function App() {
                 <button
                   onClick={() => goToLink("https://github.com/TomasZ-png/PW2_PREGUNTADOS")}                
                 ><i className="devicon-github-original"></i> <p>Ver en GitHub</p></button>
-                <button><FaDesktop /> <p>Ir a la página</p></button>
+                {/* <button><FaDesktop /> <p>Ir a la página</p></button> */}
               </div>
             </div>
           </div>
